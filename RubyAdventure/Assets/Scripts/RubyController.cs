@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RubyController : MonoBehaviour
 {
+    public static RubyController Instance;
+
+    public bool isLost;
+
     public float speed = 3.0f;
     
     public int maxHealth = 5;
@@ -28,10 +33,14 @@ public class RubyController : MonoBehaviour
     Vector2 lookDirection = new Vector2(1,0);
     
     AudioSource audioSource;
+
+    public ParticleSystem damageEffect;
+    public ParticleSystem healthEffect;
     
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         
@@ -82,6 +91,11 @@ public class RubyController : MonoBehaviour
                 }
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.R) && isLost == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
     
     void FixedUpdate()
@@ -95,20 +109,34 @@ public class RubyController : MonoBehaviour
 
     public void ChangeHealth(int amount)
     {
+        if (amount > 0)
+        {
+            //Debug.Log("test");
+            healthEffect.Play();
+        }
+
         if (amount < 0)
         {
+            animator.SetTrigger("Hit");
             if (isInvincible)
                 return;
             
             isInvincible = true;
             invincibleTimer = timeInvincible;
             
+            damageEffect.Play();
+            //GameObject damageEffectObject = Instantiate(damageEffectPrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion,identity);
             PlaySound(hitSound);
         }
+
         
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         
         UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
+
+        if (currentHealth == 0){
+                isLost = true;
+            }
     }
     
     void Launch()
