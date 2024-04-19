@@ -3581,6 +3581,33 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!1 &1075254445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1339246182113064156, guid: fccabec29bc9eb74cafbcb5f3ff14ae3, type: 3}
+  m_PrefabInstance: {fileID: 1339246181848814915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1075254446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075254445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185951137d4462e48b4b5f1f0cc13879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLost: 0
+  speed: 3
+  maxHealth: 5
+  projectilePrefab: {fileID: 6416898705349230318, guid: 6595c9a091e61f14fb574e40da90ba1c, type: 3}
+  throwSound: {fileID: 0}
+  hitSound: {fileID: 0}
+  timeInvincible: 2
+  damageEffect: {fileID: 945474153}
+  healthEffect: {fileID: 165278677}
+  healthbar: {fileID: 1841806650}
 --- !u!1 &1125873174
 GameObject:
   m_ObjectHideFlags: 0
@@ -21058,6 +21085,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1339246182113064161, guid: fccabec29bc9eb74cafbcb5f3ff14ae3, type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 1841806650}
     - target: {fileID: 1339246182113064161, guid: fccabec29bc9eb74cafbcb5f3ff14ae3, type: 3}
       propertyPath: damageEffect
       value: 

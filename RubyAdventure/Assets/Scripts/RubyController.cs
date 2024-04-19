@@ -36,6 +36,8 @@ public class RubyController : MonoBehaviour
 
     public ParticleSystem damageEffect;
     public ParticleSystem healthEffect;
+
+    public UIHealthBar healthbar;
     
     // Start is called before the first frame update
     void Start()
@@ -132,12 +134,8 @@ public class RubyController : MonoBehaviour
         }
 
         //currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        
-        if(UIHealthBar.instance != null){
-            speed = 10.0f;
-        }
 
-        UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
+        healthbar.SetValue(currentHealth / (float)maxHealth);
 
         if (currentHealth == 0){
                 isLost = true;

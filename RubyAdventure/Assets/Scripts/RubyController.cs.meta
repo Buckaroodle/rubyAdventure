@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: 77c4d2b5764a69d44b1d1d7f52cf697b
+guid: 185951137d4462e48b4b5f1f0cc13879
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - projectilePrefab: {instanceID: 0}
-  - throwSound: {fileID: 8300000, guid: b2edfd40873655249ba0e01a5cf705be, type: 3}
-  - hitSound: {fileID: 8300000, guid: 709a835b61b848644946696fdd5e5a4d, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
