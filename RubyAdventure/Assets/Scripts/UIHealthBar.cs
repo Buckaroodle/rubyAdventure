@@ -9,7 +9,7 @@ public class UIHealthBar : MonoBehaviour
     
     public Image mask;
     float originalSize;
-
+    
     void Awake()
     {
         instance = this;
@@ -23,5 +23,11 @@ public class UIHealthBar : MonoBehaviour
     public void SetValue(float value)
     {				      
         mask.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, originalSize * value);
+
+    }
+
+    void Update()
+    {
+        
     }
 }

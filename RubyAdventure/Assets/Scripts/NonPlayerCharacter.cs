@@ -6,10 +6,12 @@ public class NonPlayerCharacter : MonoBehaviour
 {
     public float displayTime = 4.0f;
     public GameObject dialogBox;
+    public GameObject pressX;
     float timerDisplay;
     
     void Start()
     {
+        pressX.SetActive(true);
         dialogBox.SetActive(false);
         timerDisplay = -1.0f;
     }
@@ -29,6 +31,7 @@ public class NonPlayerCharacter : MonoBehaviour
     public void DisplayDialog()
     {
         timerDisplay = displayTime;
+        pressX.SetActive(false);
         dialogBox.SetActive(true);
     }
 }
