@@ -6,6 +6,7 @@ public class ScoreKeeper : MonoBehaviour
 
 {
     public static int currentScore = 0;
+    public static int currentCoins = 0;
 
     // Start is called before the first frame update
     void Start()

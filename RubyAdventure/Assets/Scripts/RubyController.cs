@@ -126,14 +126,14 @@ public class RubyController : MonoBehaviour
             isInvincible = true;
             invincibleTimer = timeInvincible;
 
-            currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+            //currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
             
             damageEffect.Play();
             //GameObject damageEffectObject = Instantiate(damageEffectPrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion,identity);
             PlaySound(hitSound);
         }
 
-        //currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
 
         healthbar.SetValue(currentHealth / (float)maxHealth);
 

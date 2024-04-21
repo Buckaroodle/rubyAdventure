@@ -15,7 +15,7 @@ public class YouWin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ScoreKeeper.currentScore >= 2){
+        if (ScoreKeeper.currentScore >= 3){
             YouWinGameObject.SetActive(true);
         }
         else {

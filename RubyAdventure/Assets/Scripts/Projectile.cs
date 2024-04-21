@@ -32,6 +32,25 @@ public class Projectile : MonoBehaviour
             e.Fix();
         }
     
+        LeverObject lo = other.collider.GetComponent<LeverObject>();
+       // Debug.Log("other.collider.gameobject.name");
+        if (lo != null)
+        {
+            lo.LeverHit();
+        }
+
         Destroy(gameObject);
     }
+
+    
+    //void OnCollisionEnter2D(Collision2D other)
+    //{
+    //    Lever e = other.collider.GetComponent<Lever>();
+    //    if (e != null)
+    //    {
+    //        e.Hit();
+    //    }
+    //
+    //    Destroy(gameObject);
+    //}
 }
